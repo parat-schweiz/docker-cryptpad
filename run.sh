@@ -1,10 +1,11 @@
 #!/bin/bash
 
+docker pull promasu/cryptpad
 docker stop cryptpad
 docker rm cryptpad
 docker run -d \
 --name cryptpad \
---restart=always \
+--restart=always	 \
 -p 8007:3000 \
 -v /srv/cryptpad/files:/cryptpad/datastore \
 -v /srv/cryptpad/customize:/cryptpad/customize \
@@ -13,6 +14,6 @@ docker run -d \
 -v /srv/cryptpad/pins:/cryptpad/pins \
 -v /srv/cryptpad/tasks:/cryptpad/tasks \
 -v /srv/cryptpad/block:/cryptpad/block \
--v /srv/cryptpad/cfg:/cryptpad/cfg \
-exception/cryptpad
+-v /srv/cryptpad/config:/cryptpad/config \
+promasu/cryptpad
 

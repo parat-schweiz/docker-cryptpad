@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --no-cache -t exception/cryptpad .
+docker build -t exception/cryptpad .
